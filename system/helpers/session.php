@@ -11,7 +11,8 @@ class Session {
 		$cookieParams = session_get_cookie_params(); 
 		session_set_cookie_params(get_setting('session_maxlifetime'), $cookieParams["path"], $cookieParams["domain"], get_setting('session_https'), FALSE); 
 		session_name(get_setting('session_name'));
-		
+		if(is_dir(get_setting('session_save_path'))) session_save_path(get_setting('session_save_path'));
+
 		session_start();
 
 		if($this -> checkIfObsolete()) {

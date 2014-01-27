@@ -51,4 +51,6 @@ $_setting['session_name'] = 'MVCSESSION';
 $_setting['session_maxlifetime'] = 1440;
 // HTTPS only?
 $_setting['session_https'] = false;
+// Save path (should be outside public_html)
+$_setting['session_save_path'] = ABSOLUTE_ROOT_PATH . 'system/sessions';
 // Session information end
